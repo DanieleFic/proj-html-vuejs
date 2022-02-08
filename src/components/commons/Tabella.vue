@@ -24,6 +24,10 @@
                         <i class="fas fa-check"></i>{{element}}
                         </li>
                     </ul>
+                    <div class="ms_img">
+                        <img :src="element.src" alt="">
+                    </div>
+                    
                 </div>
                 
         </div>
@@ -62,6 +66,8 @@ export default {
 @import "../../assets/style/vars.scss";
     .ms_container{
         margin-top: 50px;
+        height: 500px;
+        border-bottom: 1px solid $color-gray;
         
         .container{
             display: flex;
@@ -82,6 +88,7 @@ export default {
     }
 
     .ms_text{
+        position: relative;
         width: 50%;
         margin-left: 100px;
         margin-top:30px;
@@ -91,6 +98,16 @@ export default {
         }
         p{
             color: $color-gray;
+        }
+
+        .ms_img{
+            position: absolute;
+            left: 600px;
+            top: 300px;
+            
+            img{
+                width: 100px;
+            }
         }
 
         .fa-check{
