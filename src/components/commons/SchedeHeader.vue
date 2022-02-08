@@ -49,6 +49,10 @@ export default {
         align-items: center;
         justify-content: center;
 
+        &:hover{
+            color: white;
+            background-color: $color-hover;
+        }
         
 
         p{

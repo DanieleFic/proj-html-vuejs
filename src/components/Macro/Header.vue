@@ -147,8 +147,8 @@ export default {
                 border-radius: none;
                 font-weight: 900;
             }
-    
 
+    
     .row{
         height: 50px;
         display: flex;
@@ -206,6 +206,5 @@ export default {
     .dnone{
         display: none;
     }
-    
 
 </style>
