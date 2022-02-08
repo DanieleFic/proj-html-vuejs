@@ -1,5 +1,5 @@
 <template>
-    <div class="container">
+    <div class="ms_sezione1 container">
         <div class="row">
             <div class="col-12">
                 <h1>The Trusted Name <br>
@@ -25,6 +25,27 @@
                         <h1>Empowering Children to Reach Their Potenital.</h1>
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio, repudiandae veniam asperiores ipsum sequi minus amet.
                             Blanditiis a ipsam, aut facilis veritatis, quidem aliquid, voluptatem quasi culpa eligendi ipsa corporis!</p>
+                        <div class="ms_number container">
+                            <div class="row">
+                                <div class="col-6">
+                                <h1>
+                                    168
+                                </h1>
+                                <span>
+                                    User Stories
+                                </span>
+                                
+                                </div>
+                                <div class="col-6">
+                                <h1>
+                                    347
+                                </h1>
+                                <span>
+                                    Events
+                                </span>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -42,6 +63,7 @@ export default {
 <style lang="scss" scoped>
 @import "../../assets/style/vars.scss";
     .container{
+        
         h1{
             font-weight: 900;
         }
@@ -65,6 +87,12 @@ export default {
         }
         h1{
             font-size: 70px;
+        }
+    }
+
+    .ms_number{
+        h1{
+            color:$text-azurine
         }
     }
     

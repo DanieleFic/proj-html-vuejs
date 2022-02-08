@@ -23,6 +23,8 @@ const productsdata = [
         src: require("../assets/img/h5-custom-icon-6.png"),
         titolo: "DIY&Craft",
     },
-  ];
-  
-  export default productsdata;
+];
+
+
+
+export default productsdata;

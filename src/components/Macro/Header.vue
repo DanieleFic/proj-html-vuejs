@@ -33,14 +33,21 @@
                             <i class="fas fa-bars"></i>
                         </div>
                     </div>
-                    <div class="ms_textmain">
-                        <h1>Contemporary Ideas</h1>
+                    <div v-for="(element, index) in testo"
+                        :key="index"
+                        :class="iscorrente(index)"
+                        class="ms_textmain">
+                        <h1>{{element.title}}</h1>
                         <p>
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
-                            Totam vel nihil ipsam aperiam distinctio ex?Lorem ipsum dolor, 
-                            sit amet consectetur adipisicing elit. Illum, neque.
+                            {{element.text}}
                         </p>
                         <button type="button" class="btn btn-primary">REGISTER NOW</button>
+                        <div class="ms_button">
+                            <span class="dots"><span class="dot"   @click="currentText = 0"></span></span>
+                            <span class="dots"><span class="dot"   @click="currentText = 1"></span></span>
+                            <span class="dots"><span class="dot"   @click="currentText = 2"></span></span>
+                        </div>
+                        
                     </div>
                 </div>
             </div>
@@ -56,21 +63,64 @@ export default {
     name: "Header",
     components: {
     Schede
+    },
+    data() {
+        return {
+            currentText: 0,
+            currentbtn:0,
+        testo: [
+            {   
+                title: "Contemporary Ideas",
+                text: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam vel nihil ipsam aperiam distinctio ex?Lorem ipsum dolor,nihil ipsam aperiam distinctio ex?Lorem ipsum dolor,nihil ipsam aperiam distinctio ex?Lorem ipsum dolor,"
+            },
+            {   
+                title: "Registrati subito",
+                text: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam vel nihil ipsam aperiam distinctio ex?Lorem ipsum dolor,Lorem ipsum dolor,nihil ipsam aperiamLorem ipsum dolor,nihil "
+            },
+            {   
+                title: "Subito Registrati",
+                text: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam vel nihil ipsam aperiam distinctio ex?Lorem ipsum dolor,Lorem ipsum dolor,nihil "
+            }
+            ],
+        }   
+    },
+    methods: {
+        iscorrente: function(indiceimmagine){
+            if(indiceimmagine == this.currentText){
+                return "active";
+            }
+                return "dnone";
+        },
+        /* iscorrentedot: function(indiceimmagine){
+            if(indiceimmagine == this.currentText){
+                return "white";
+            } else{
+                return "gray";
+            }
+                
+        }, */
+        /* sceglitext: function(indiceimmagine){
+            this.currentText = indiceimmagine
+            console.log(indiceimmagine + "ciao")
+            console.log(this.currentText + "ciao2")
+            return this.currentText
+            //console.log(this.dropDownCorrente, "ciao")
+            //console.log(this.corrente)
+            }, */
     }
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 @import "../../assets/style/vars.scss";
 
     .ms_jumbo{  
         height: 700px;
-        position: relative;
         background-image: url("../../assets/img/jumbo.jpg");
         background-size: cover;
         background-repeat: no-repeat;
         text-align: center;
-
+    }
         .ms_textmain{
             margin: 0 auto;
             width: 50%;
@@ -97,7 +147,7 @@ export default {
                 border-radius: none;
                 font-weight: 900;
             }
-    }
+    
 
     .row{
         height: 50px;
@@ -129,5 +179,33 @@ export default {
             
         }
     }
+        .ms_button{
+            margin-top: 220px;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+        }
+        .dot {
+            cursor: pointer;
+            background-color: white;
+            height: 12px;
+            width: 12px;
+            margin: 0 2px;
+            border-radius: 50%;
+            display: inline-block;
+            transition: background-color 0.6s ease;
+        }
+
+        
+
+    .active{
+        display: block;
+    }
+
+    .dnone{
+        display: none;
+    }
+    
 
 </style>
