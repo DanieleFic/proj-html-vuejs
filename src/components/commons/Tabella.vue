@@ -66,8 +66,9 @@ export default {
 @import "../../assets/style/vars.scss";
     .ms_container{
         margin-top: 50px;
+        margin-left: 20%;
         height: 500px;
-        border-bottom: 1px solid $color-gray;
+        /* border-bottom: 1px solid $color-gray; */
         
         .container{
             display: flex;

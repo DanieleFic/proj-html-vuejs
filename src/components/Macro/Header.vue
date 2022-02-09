@@ -28,9 +28,9 @@
                     </div>
                     <div class="col-2">
                         <div class="ms_icon">
-                            <i class="fas fa-search"></i>
-                            <i class="fas fa-shopping-basket"></i>
-                            <i class="fas fa-bars"></i>
+                            <i class="icon fas fa-search"></i>
+                            <i class="icon fas fa-shopping-basket"></i>
+                            <i class="icon fas fa-bars"></i>
                         </div>
                     </div>
                     <div v-for="(element, index) in testo"
@@ -174,9 +174,12 @@ export default {
             padding-top: 15px;
             display: flex;
             flex-direction: row;
-            justify-content: space-evenly;
+            /* justify-content: space-evenly; */
             color: white;
             
+            .icon{
+                margin-right: 13px;
+            }
         }
     }
         .ms_button{

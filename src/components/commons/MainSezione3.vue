@@ -25,12 +25,13 @@
                         <p>{{element.text}}</p>
                     </div>
                     <div class="ms_text2">
-                        <span><i class="fa-thin fa-user"></i>{{element.utenti}}</span>
+                        <span><i class="fa-light fa-user"></i>{{element.utenti}}</span>
                         <span><i class="fa-thin fa-4"></i>{{element.tag}}</span>
                     </div>
                 </div>
             </div>
         </div>
+        <TabellaPrezzi/>
     </div>
     
     
@@ -38,9 +39,11 @@
 
 <script>
 import dataSchedebox from "../../data/dataSchedebox";
+import TabellaPrezzi from "../commons/TabellaPrezzi.vue"
 export default {
     name:"MainSezione3",
     components: {
+        TabellaPrezzi
     },
     data(){
         return{
