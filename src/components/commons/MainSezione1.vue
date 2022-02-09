@@ -1,6 +1,6 @@
 <template>
     <div class="ms_sezione1 container">
-        <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+        
         <div class="row">
             <div class="col-12">
                 <h1>The Trusted Name <br>
@@ -96,5 +96,6 @@ export default {
             color:$text-azurine
         }
     }
+    
     
 </style>

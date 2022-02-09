@@ -110,6 +110,8 @@ export default {
 
     .container-fluid{
         margin-top: 100px;
+        width: 100%;
+        background-image: url("../../assets/img/background-pattern.jpg");
     }
     .ms_textcenter{
         text-align: center;

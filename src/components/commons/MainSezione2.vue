@@ -80,7 +80,7 @@ export default {
     .container-fluid{
         margin-top: 50px;
         height: 600px;
-        background-color: $main-color;
+        background-image: url("../../assets/img/h5-parallax-img-1.png");
         text-align: center;
         color: white;
         .ms_profile{
@@ -109,7 +109,7 @@ export default {
         height: 12px;
         width: 12px;
         margin: 0 2px;
-        background-color: #bbb;
+        background-color: $color-pallini;
         border-radius: 50%;
         display: inline-block;
         transition: background-color 0.6s ease;
