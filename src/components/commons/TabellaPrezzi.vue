@@ -79,10 +79,10 @@
                     <td><i class="fas fa-check"></i></td>
                 </tr>
                 <tr>
-                    <th class="noborder" scope="row"></th>
-                    <td><button type="button" class="btnwhite btn-primary">GET IT NOW</button></td>
-                    <td><button type="button" class="btnblue btn-primary">GET IT NOW</button></td>
-                    <td><button type="button" class="btnwhite btn-primary">GET IT NOW</button></td>
+                    <th  scope="row"></th>
+                    <td class="ms_bg"><button type="button" class="btnwhite btn-primary">GET IT NOW</button></td>
+                    <td class="ms_bg"><button type="button" class="btnblue btn-primary">GET IT NOW</button></td>
+                    <td class="ms_bg"><button type="button" class="btnwhite btn-primary">GET IT NOW</button></td>
                 </tr>
             </tbody>
         </table>
@@ -108,8 +108,8 @@ export default {
 <style lang="scss" scoped>
 @import "../../assets/style/vars.scss";
 
-    .ms_container{
-        margin-top: 50px;
+    .container-fluid{
+        margin-top: 100px;
     }
     .ms_textcenter{
         text-align: center;
@@ -123,6 +123,7 @@ export default {
 
     table{
         text-align: center;
+        margin-top: 50px;
 
         th{
             padding: 15px;
@@ -141,11 +142,13 @@ export default {
             width: 15%;
             font-size: 25px;
             margin-top: 30px;
+            background-color:$background-tabella ;
         }
         .ms_tablewidth1{
             width: 10%;
             font-size: 25px;
             margin-top: 30px;
+            padding:30px
         }
     }
 
@@ -177,7 +180,9 @@ export default {
         &:hover{
             background-color:$main-color;
             border: 1px solid $main-color;
+            }
         }
-        }
-    
+    .ms_bg{
+        background-color: $background-tabella;
+    }
 </style>

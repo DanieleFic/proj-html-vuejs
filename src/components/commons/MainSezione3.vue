@@ -9,6 +9,7 @@
                 <div
                 v-for="(element, index) in schede"
                 :key="index"
+                :class="iscorrente(index)"
                 class="ms_box col-3">
                 <div class="box_img">
                     <img class="ms_img" :src="element.src" alt="">
@@ -25,11 +26,18 @@
                         <p>{{element.text}}</p>
                     </div>
                     <div class="ms_text2">
-                        <span><i class="fa-light fa-user"></i>{{element.utenti}}</span>
-                        <span><i class="fa-thin fa-4"></i>{{element.tag}}</span>
+                        <span><i class="fa fa-user"></i>{{element.utenti}}</span>
+                        <span><i class="fa fa-tag"></i>{{element.tag}}</span>
                     </div>
                 </div>
             </div>
+        </div>
+        <div class="ms_button">
+            <span class="dots"><span class="dot" @click="corrente = 0"></span></span>
+            <span class="dots"><span class="dot" @click="corrente = 3"></span></span>
+            <span class="dots"><span class="dot" @click="corrente = 6"></span></span>
+            <span class="dots"><span class="dot" @click="corrente = 9"></span></span>
+            <span class="dots"><span class="dot" @click="corrente = 11"></span></span>
         </div>
         <TabellaPrezzi/>
     </div>
@@ -47,10 +55,20 @@ export default {
     },
     data(){
         return{
-            currentText: 0,
+            corrente: 0,
             schede: dataSchedebox,
         }
     },
+
+    methods: {
+        iscorrente: function(indiceimmagine){
+            if(indiceimmagine == this.corrente || indiceimmagine == this.corrente + 1 || indiceimmagine == this.corrente  - 1 ){
+                return "active";
+            }
+                return "dnone";
+        },
+    }
+
 }
 </script>
 
@@ -98,6 +116,22 @@ export default {
             width: 100%
         }
     }
+    .ms_button{
+        text-align: center;
+        
+        .dot {
+        cursor: pointer;
+        background-color: black;
+        height: 12px;
+        width: 12px;
+        margin: 0 2px;
+        border-radius: 50%;
+        display: inline-block;
+        transition: background-color 0.6s ease;
+        }
+    
+    }
+    
 
     .ms_text2{
         span{
@@ -109,5 +143,15 @@ export default {
 
     .ms_lorem{
         padding: 10px;
-        }
+    }
+
+    .active{
+        display: block;
+    }
+
+    .dnone{
+        display:none;
+        
+    }
+
 </style>

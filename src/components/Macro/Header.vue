@@ -33,6 +33,7 @@
                             <i class="icon fas fa-bars"></i>
                         </div>
                     </div>
+                    <transition-group name="fade" >
                     <div v-for="(element, index) in testo"
                         :key="index"
                         :class="iscorrente(index)"
@@ -47,8 +48,8 @@
                             <span class="dots"><span class="dot"   @click="currentText = 1"></span></span>
                             <span class="dots"><span class="dot"   @click="currentText = 2"></span></span>
                         </div>
-                        
                     </div>
+                    </transition-group>
                 </div>
             </div>
         </div>
@@ -68,6 +69,7 @@ export default {
         return {
             currentText: 0,
             currentbtn:0,
+            show: true,
         testo: [
             {   
                 title: "Contemporary Ideas",
@@ -87,9 +89,9 @@ export default {
     methods: {
         iscorrente: function(indiceimmagine){
             if(indiceimmagine == this.currentText){
-                return "active";
+                return "active fade-enter-to fade-enter-active";
             }
-                return "dnone";
+                return "dnone fade-enter-to fade-enter-active";
         },
         /* iscorrentedot: function(indiceimmagine){
             if(indiceimmagine == this.currentText){
@@ -127,7 +129,9 @@ export default {
             text-align: center;
             margin-top: 170px;
             margin-bottom: 50px;
-
+            /* transition: all 2s ease; */
+            
+            
             h1{
                 font-size: 80px;
                 font-weight: 900;
@@ -154,6 +158,11 @@ export default {
         display: flex;
         flex-direction: row;
 
+        .col:hover{
+            color:$main-color;
+            cursor: pointer;
+        }
+
         .ms_nav{
             display: flex;
             flex-direction: row;
@@ -179,6 +188,12 @@ export default {
             
             .icon{
                 margin-right: 13px;
+
+                &:hover{
+                color:$main-color;
+                cursor: pointer;
+                }
+                
             }
         }
     }
@@ -208,6 +223,16 @@ export default {
 
     .dnone{
         display: none;
+    }
+
+    .fade-move{
+        opacity: 0;
+    }
+    .fade-enter-to{
+        opacity: 1;
+    }
+    .fade-enter-active{
+        transition: all 1s ease;
     }
 
 </style>
