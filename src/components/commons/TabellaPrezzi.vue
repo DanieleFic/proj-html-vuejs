@@ -169,6 +169,12 @@ export default {
         border: none;
         border-radius: none;
         font-weight: 900;
+
+        &:hover{
+            color: $main-color;
+            background-color:white;
+            border: 1px solid $main-color;
+        }
         }
 
     .btnwhite{
