@@ -99,6 +99,18 @@ export default {
             padding: 0;
             border: 1px solid black;
             margin:50px 15px;
+            animation: fade 2s forwards;
+            @keyframes fade {
+            from {
+            opacity: 0;
+            bottom: 300px;
+            transform: translateX(200px);
+                }
+            to {
+                opacity: 1;
+        
+                }
+            }
         h6{
             font-weight: 900;
             font-size: 20px;
@@ -138,6 +150,10 @@ export default {
             font-size: 15px;
             color:$color-gray ;
         }
+    }
+
+    .attivo{
+        background-color: black;
     }
 
     .ms_lorem{

@@ -81,6 +81,7 @@ export default {
         color: white;
         .ms_profile{
             margin-top: 200px;
+            animation: fade 2s forwards;
         }
         .row{
             display: flex;
@@ -91,6 +92,19 @@ export default {
         .ms_person{
             height: 100px;
             margin-bottom: 30px;
+            
+        
+            @keyframes fade {
+            from {
+            opacity: 0;
+            bottom: 300px;
+            transform: translateY(-200px);
+                }
+            to {
+                opacity: 1;
+        
+                }
+            }
             
 
             img{

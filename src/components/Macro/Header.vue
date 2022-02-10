@@ -127,8 +127,19 @@ export default {
             text-align: center;
             margin-top: 170px;
             margin-bottom: 50px;
-            /* transition: 2s linear; */
-            /* transition: all 2s ease; */  
+            animation: fade 2s forwards;
+
+            @keyframes fade {
+            from {
+            opacity: 0;
+            bottom: 300px;
+            transform: translateX(-1000px);
+                }
+            to {
+                opacity: 1;
+        
+                }
+            }
             
             h1{
                 font-size: 80px;

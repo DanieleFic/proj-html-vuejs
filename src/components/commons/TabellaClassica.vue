@@ -13,7 +13,7 @@
             </div>
                 <div
                 v-for="(element, index) in schede"
-                :class="iscorrente(index)"
+                v-show="index == currentText"
                 :key="index" class="ms_text col-10">
                     <h1>{{element.titolo}}</h1>
                     <p>{{element.testo}}</p>
@@ -45,12 +45,12 @@ export default {
         }
     },
     methods: {
-        iscorrente: function(indiceimmagine){
+        /* iscorrente: function(indiceimmagine){
             if(indiceimmagine == this.currentText){
                 return "active";
             }
                 return "dnone";
-        },
+        }, */
         iscorrentebox: function(indiceimmagine){
             if(indiceimmagine == this.currentText){
                 return "activeblue";
@@ -127,15 +127,6 @@ export default {
             
         }
     }
-
-    .active{
-        display: block;
-    }
-
-    .dnone{
-        display: none;
-    }
-    
     .activeblue{
         border-left: 5px solid $text-azurine!important ;
         background-color:#0707071A ;
