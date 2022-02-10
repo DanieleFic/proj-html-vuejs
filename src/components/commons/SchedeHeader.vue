@@ -49,10 +49,12 @@ export default {
         align-items: center;
         justify-content: center;
         cursor: pointer;
+        transition: all .3s ease-out;
 
         &:hover{
             color: white;
             background-color: $color-hover;
+            transform: translate(0, -5px);
         }
         
 

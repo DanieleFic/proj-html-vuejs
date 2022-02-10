@@ -76,6 +76,9 @@ export default {
             h3{
                 color: white;
                 font-weight: 900;
+                &:hover{
+                color: white
+            }
             }
             .ms_row{
                 padding-top: 70px;
@@ -95,16 +98,29 @@ export default {
         li{
             color: $color-gray;
             list-style: none;
+            cursor: pointer;
+
+            &:hover{
+                color: white
+            }
         };
     }
 
     .row{
         p{
             color: $color-borderbottom;
+            cursor: pointer;
+            &:hover{
+                color: white
+            }
         }
     }
     .ms_gray{
         color: $color-gray;
+        cursor: pointer;
+        &:hover{
+                color: white
+            }
         }
 
 </style>

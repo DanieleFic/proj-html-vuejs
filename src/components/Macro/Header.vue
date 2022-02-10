@@ -33,23 +33,25 @@
                             <i class="icon fas fa-bars"></i>
                         </div>
                     </div>
-                    <transition-group name="fade" >
                     <div v-for="(element, index) in testo"
                         :key="index"
-                        :class="iscorrente(index)"
+                        v-show="index == currentText"
                         class="ms_textmain">
                         <h1>{{element.title}}</h1>
                         <p>
                             {{element.text}}
                         </p>
                         <button type="button" class="btn btn-primary">REGISTER NOW</button>
-                        <div class="ms_button">
-                            <span class="dots"><span class="dot"   @click="currentText = 0"></span></span>
-                            <span class="dots"><span class="dot"   @click="currentText = 1"></span></span>
-                            <span class="dots"><span class="dot"   @click="currentText = 2"></span></span>
-                        </div>
                     </div>
-                    </transition-group>
+                    <div class="ms_button">
+                            <span  class="dots">
+                                <span 
+                                v-for="(element, index) in testo" 
+                                :key="index" 
+                                :class="{ attivo: index == currentText }" class="dot"   
+                                @click="currentText = index"></span>
+                                </span>
+                    </div>
                 </div>
             </div>
         </div>
@@ -68,8 +70,7 @@ export default {
     data() {
         return {
             currentText: 0,
-            currentbtn:0,
-            show: true,
+            isActive: false,
         testo: [
             {   
                 title: "Contemporary Ideas",
@@ -87,11 +88,9 @@ export default {
         }   
     },
     methods: {
-        iscorrente: function(indiceimmagine){
-            if(indiceimmagine == this.currentText){
-                return "active fade-enter-to fade-enter-active";
-            }
-                return "dnone fade-enter-to fade-enter-active";
+        
+        pallino: function(){
+            
         },
         /* iscorrentedot: function(indiceimmagine){
             if(indiceimmagine == this.currentText){
@@ -115,7 +114,6 @@ export default {
 
 <style lang="scss" scoped>
 @import "../../assets/style/vars.scss";
-
     .ms_jumbo{  
         height: 700px;
         background-image: url("../../assets/img/jumbo.jpg");
@@ -129,8 +127,8 @@ export default {
             text-align: center;
             margin-top: 170px;
             margin-bottom: 50px;
-            /* transition: all 2s ease; */
-            
+            /* transition: 2s linear; */
+            /* transition: all 2s ease; */  
             
             h1{
                 font-size: 80px;
@@ -198,7 +196,6 @@ export default {
         }
     }
         .ms_button{
-            margin-top: 220px;
             display: flex;
             flex-direction: row;
             justify-content: center;
@@ -212,27 +209,9 @@ export default {
             margin: 0 2px;
             border-radius: 50%;
             display: inline-block;
-            transition: background-color 0.6s ease;
         }
-
-        
-
-    .active{
-        display: block;
-    }
-
-    .dnone{
-        display: none;
-    }
-
-    .fade-move{
-        opacity: 0;
-    }
-    .fade-enter-to{
-        opacity: 1;
-    }
-    .fade-enter-active{
-        transition: all 1s ease;
-    }
+        .attivo{
+            background-color: $main-color;
+        }
 
 </style>

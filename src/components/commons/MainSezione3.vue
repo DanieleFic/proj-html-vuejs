@@ -108,7 +108,7 @@ export default {
             padding: 0 10px;
             span{
                 padding: 5px 10px;
-                background-color:green;
+                background-color:yellow;
                 border-radius: 80%;
             }
         }

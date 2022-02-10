@@ -21,7 +21,7 @@ const productsdata = [
         src: require("../assets/img/img-box-3.jpg"),
         titolo: "Web Designing",
         name:"David Sanders",
-        price:"FREE",
+        price:"20$",
         text:"Lorem, ipsum dolor sit amet consectetur adipisicing elit.",
         utenti: "1",
         tag: "PROGRAMMING"
@@ -30,7 +30,7 @@ const productsdata = [
         src: require("../assets/img/img-box-4.jpg"),
         titolo: "Financial Modeling",
         name:"David Sanders",
-        price:"FREE",
+        price:"500$",
         text:"Lorem, ipsum dolor sit amet consectetur adipisicing elit.",
         utenti: "1",
         tag: "PROGRAMMING"
@@ -75,7 +75,7 @@ const productsdata = [
         src: require("../assets/img/img-box-9.jpg"),
         titolo: "Mematore",
         name:"David Sanders",
-        price:"FREE",
+        price:"1M$",
         text:"Lorem, ipsum dolor sit amet consectetur adipisicing elit.",
         utenti: "1",
         tag: "PROGRAMMING"
@@ -84,7 +84,7 @@ const productsdata = [
         src: require("../assets/img/img-box-10.jpg"),
         titolo: "Pepe",
         name:"David Sanders",
-        price:"FREE",
+        price:"500K$",
         text:"Lorem, ipsum dolor sit amet consectetur adipisicing elit.",
         utenti: "1",
         tag: "PROGRAMMING"

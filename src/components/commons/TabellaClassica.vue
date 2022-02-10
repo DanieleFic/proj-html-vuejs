@@ -138,7 +138,7 @@ export default {
     
     .activeblue{
         border-left: 5px solid $text-azurine!important ;
-        background-color:rgb(211, 209, 209) ;
+        background-color:#0707071A ;
         
         span{
             color: $text-azurine;

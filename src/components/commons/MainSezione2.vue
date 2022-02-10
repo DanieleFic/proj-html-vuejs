@@ -4,7 +4,7 @@
         <div class="row">
             <div v-for="(element, index) in testo"
                 :key="index"
-                :class="iscorrente(index)"
+                v-show="index == currentText"
                 class="ms_profile col-6">
                 <div class="ms_person">
                     <img :src="element.src" alt="">
@@ -21,9 +21,13 @@
             </div>
         </div>
         <div class="ms_button">
-            <span class="dots"><span class="dot" @click="currentText = 0"></span></span>
-            <span class="dots"><span class="dot" @click="currentText = 1"></span></span>
-            <span class="dots"><span class="dot" @click="currentText = 2"></span></span>
+            <span  class="dots">
+                <span 
+                v-for="(element, index) in testo" 
+                :key="index" 
+                :class="{ attivo: index == currentText }" class="dot"   
+                @click="currentText = index"></span>
+                </span>
         </div>
     </div>
     <Tabella/>
@@ -33,7 +37,7 @@
 </template>
 
 <script>
-import Tabella from "./Tabella.vue";
+import Tabella from "./TabellaClassica.vue";
 export default {
     name:"MainSezione2",
     components: {
@@ -64,14 +68,6 @@ export default {
             ],
         }   
     },
-    methods: {
-        iscorrente: function(indiceimmagine){
-            if(indiceimmagine == this.currentText){
-                return "active";
-            }
-                return "dnone";
-        },
-    }
 }
 </script>
 
@@ -123,6 +119,9 @@ export default {
         display: none;
     }
 
+    .attivo{
+            background-color: white;
+        }
 
     
 </style>
