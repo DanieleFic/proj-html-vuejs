@@ -9,9 +9,8 @@
                     <p>{{element.titolo}}</p>
                 </div>
             </div>
-            
         </div>
-        </div>
+    </div>
 </template>
 
 <script>
@@ -33,7 +32,6 @@ export default {
         margin-top: 50px;
         box-sizing: border-box;
         height: 300px;
-
         .row{
             text-align: center;
         }
@@ -56,7 +54,6 @@ export default {
             background-color: $color-hover;
             transform: translate(0, -5px);
         }
-        
 
         p{
             margin: 20px 0;

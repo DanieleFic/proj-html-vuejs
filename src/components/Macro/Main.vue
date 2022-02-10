@@ -40,6 +40,7 @@ export default {
         background-color:$main-color;
         padding: 5px;
         width: 50px;
+        color: $color-white;
     }
 
 </style>

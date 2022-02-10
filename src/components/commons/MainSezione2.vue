@@ -82,6 +82,16 @@ export default {
         .ms_profile{
             margin-top: 200px;
             animation: fade 2s forwards;
+            @keyframes fade {
+            from {
+            opacity: 0;
+            bottom: 300px;
+            transform: translateY(-200px);
+                }
+            to {
+                opacity: 1;
+                }
+            }
         }
         .row{
             display: flex;
@@ -93,27 +103,13 @@ export default {
             height: 100px;
             margin-bottom: 30px;
             
-        
-            @keyframes fade {
-            from {
-            opacity: 0;
-            bottom: 300px;
-            transform: translateY(-200px);
-                }
-            to {
-                opacity: 1;
-        
-                }
-            }
             
-
             img{
                 height: 100%;
                 border-radius: 50%;
             }
         }
     }
-
     .dot {
         cursor: pointer;
         height: 12px;
@@ -125,17 +121,8 @@ export default {
         transition: background-color 0.6s ease;
         }
 
-    .active{
-        display: block;
-    }
-
-    .dnone{
-        display: none;
-    }
-
     .attivo{
             background-color: white;
         }
 
-    
 </style>

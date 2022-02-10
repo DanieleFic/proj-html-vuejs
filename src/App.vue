@@ -26,6 +26,7 @@ export default {
 <style lang="scss">
 @import "./assets/style/globals.scss";
 #app{
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Merriweather', serif;
+  font-family: 'PT Serif', serif;
 }
 </style>

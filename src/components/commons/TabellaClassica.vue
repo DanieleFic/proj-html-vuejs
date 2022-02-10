@@ -1,7 +1,7 @@
 <template>
     <div class="ms_container">
-        <div class="container">
-            <div class="row">
+        <div class="container d-flex ">
+            <div class="row flex-column">
                 <div
                 v-for="(element, index) in schede"
                 :key="index"
@@ -68,16 +68,8 @@ export default {
         margin-top: 50px;
         margin-left: 20%;
         height: 500px;
-        /* border-bottom: 1px solid $color-gray; */
-        
-        .container{
-            display: flex;
-            flex-direction: row;
-        }
     }
     .row{
-        display: flex;
-        flex-direction: column;
         width: 20%;
         
         .ms_box{
@@ -93,9 +85,9 @@ export default {
         width: 50%;
         margin-left: 100px;
         margin-top:30px;
-        font-weight: 900;
         h1{
             color: black;
+            font-weight: 900;
         }
         p{
             color: $color-gray;
@@ -115,7 +107,6 @@ export default {
                 color:$text-azurine;
                 margin-right: 20px;
             }
-
         ul{
             padding: 0;
             li{
@@ -123,14 +114,11 @@ export default {
                 padding:10px;
                 color:$color-gray ;
             }
-
-            
         }
     }
     .activeblue{
         border-left: 5px solid $text-azurine!important ;
-        background-color:#0707071A ;
-        
+        background-color:#0707071A;    
         span{
             color: $text-azurine;
         }

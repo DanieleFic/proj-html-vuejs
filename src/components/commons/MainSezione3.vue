@@ -19,17 +19,16 @@
                         <div class="ms_textbutton">
                             <div class="d-flex justify-content-between align-items-center ms_scheda">
                                 <h6>{{element.titolo}}</h6>
-                                <span class="rounded-circle">{{element.price}}</span>
+                                <span :class="coloreprezzo(element.price)">{{element.price}}</span>
                             </div>
-                            <span class="ms_lorem">{{element.name}}</span>
-                            
+                            <span class="ms_name">{{element.name}}</span>
                         </div>
                         <div class="ms_lorem">
                             <p>{{element.text}}</p>
                         </div>
                         <div class="ms_text2">
-                            <span><i class="fa fa-user"></i>{{element.utenti}}</span>
-                            <span><i class="fa fa-tag"></i>{{element.tag}}</span>
+                            <span><i class="icon fa fa-user"></i>{{element.utenti}}</span>
+                            <span><i class="icon fa fa-tag"></i>{{element.tag}}</span>
                         </div>
                     </div>
                 </div>
@@ -71,6 +70,12 @@ export default {
             }
                 return "dnone";
         },
+
+        coloreprezzo(price){
+            if( price == "FREE"){
+                return "bg-yellow"
+            }
+        }
     }
 
 }
@@ -95,7 +100,7 @@ export default {
         }
     }
     .ms_box{
-            height: 400px;
+            height: 450px;
             padding: 0;
             border: 1px solid black;
             margin:50px 15px;
@@ -108,7 +113,6 @@ export default {
                 }
             to {
                 opacity: 1;
-        
                 }
             }
         h6{
@@ -119,13 +123,19 @@ export default {
             margin-top: 15px;
             padding: 0 10px;
             span{
-                padding: 5px 10px;
-                background-color:yellow;
-                border-radius: 80%;
+                font-size: 12px;
+                padding: 3px 13px;
+                background-color:$main-color;
+                color: white;
+                border-radius: 35px;
             }
         }
         img{
             width: 100%
+        }
+
+        .icon{
+            margin-right: 5px;
         }
     }
     .ms_button{
@@ -152,12 +162,14 @@ export default {
         }
     }
 
-    .attivo{
-        background-color: black;
-    }
-
     .ms_lorem{
         padding: 10px;
+        font-size: 15px;
+        color: $color-borderbottom;
+    }
+    .ms_name{
+        padding: 10px;
+        color: $color-textschede;
     }
 
     .active{
@@ -168,4 +180,7 @@ export default {
         display:none;
     }
 
+    .bg-yellow{
+        background-color:$color-prezzo!important;
+    }
 </style>

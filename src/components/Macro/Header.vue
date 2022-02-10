@@ -1,97 +1,20 @@
 <template>
-    <div class="header">
-        <div class="ms_jumbo container-fluid">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-2">
-                        <img class="ms_logo" src="../../assets/img/logo-light.png" alt="">
-                    </div>
-                    <div class="ms_nav col-8">
-                        <div class="col" >
-                        HOME
-                        </div>
-                        <div class="col">
-                        COURSE
-                        </div>
-                        <div class="col">
-                        INSTRUCTORS
-                        </div>
-                        <div class="col">
-                        EVENTS
-                        </div>
-                        <div class="col">
-                        PAGES
-                        </div>
-                        <div class="col">
-                        ELEMENTS
-                        </div>
-                    </div>
-                    <div class="col-2">
-                        <div class="ms_icon">
-                            <i class="icon fas fa-search"></i>
-                            <i class="icon fas fa-shopping-basket"></i>
-                            <i class="icon fas fa-bars"></i>
-                        </div>
-                    </div>
-                    <div v-for="(element, index) in testo"
-                        :key="index"
-                        v-show="index == currentText"
-                        class="ms_textmain">
-                        <h1>{{element.title}}</h1>
-                        <p>
-                            {{element.text}}
-                        </p>
-                        <button type="button" class="btn btn-primary">REGISTER NOW</button>
-                    </div>
-                    <div class="ms_button">
-                            <span  class="dots">
-                                <span 
-                                v-for="(element, index) in testo" 
-                                :key="index" 
-                                :class="{ attivo: index == currentText }" class="dot"   
-                                @click="currentText = index"></span>
-                                </span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    <Schede/>
+    <div>
+        <NavHeader/>
+        <Schede/>
     </div>
-    
 </template>
 
 <script>
 import Schede from "../commons/SchedeHeader.vue"
+import NavHeader from "../commons/NavHeader.vue"
 export default {
     name: "Header",
     components: {
-    Schede
-    },
-    data() {
-        return {
-            currentText: 0,
-            isActive: false,
-        testo: [
-            {   
-                title: "Contemporary Ideas",
-                text: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam vel nihil ipsam aperiam distinctio ex?Lorem ipsum dolor,nihil ipsam aperiam distinctio ex?Lorem ipsum dolor,nihil ipsam aperiam distinctio ex?Lorem ipsum dolor,"
-            },
-            {   
-                title: "Registrati subito",
-                text: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam vel nihil ipsam aperiam distinctio ex?Lorem ipsum dolor,Lorem ipsum dolor,nihil ipsam aperiamLorem ipsum dolor,nihil "
-            },
-            {   
-                title: "Subito Registrati",
-                text: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam vel nihil ipsam aperiam distinctio ex?Lorem ipsum dolor,Lorem ipsum dolor,nihil "
-            }
-            ],
-        }   
+    Schede,
+    NavHeader,
     },
     methods: {
-        
-        pallino: function(){
-            
-        },
         /* iscorrentedot: function(indiceimmagine){
             if(indiceimmagine == this.currentText){
                 return "white";
@@ -100,27 +23,12 @@ export default {
             }
                 
         }, */
-        /* sceglitext: function(indiceimmagine){
-            this.currentText = indiceimmagine
-            console.log(indiceimmagine + "ciao")
-            console.log(this.currentText + "ciao2")
-            return this.currentText
-            //console.log(this.dropDownCorrente, "ciao")
-            //console.log(this.corrente)
-            }, */
     }
 }
 </script>
 
 <style lang="scss" scoped>
 @import "../../assets/style/vars.scss";
-    .ms_jumbo{  
-        height: 700px;
-        background-image: url("../../assets/img/jumbo.jpg");
-        background-size: cover;
-        background-repeat: no-repeat;
-        text-align: center;
-    }
         .ms_textmain{
             margin: 0 auto;
             width: 50%;
@@ -137,18 +45,14 @@ export default {
                 }
             to {
                 opacity: 1;
-        
                 }
             }
-            
             h1{
                 font-size: 80px;
-                font-weight: 900;
+                
                 color: white;
             }
-
             p{
-                font-weight: 900;
                 color: white;
                 padding-top: 10px;
             }
@@ -158,54 +62,7 @@ export default {
                 background-color:$main-color ;
                 border: none;
                 border-radius: none;
-                font-weight: 900;
             }
-
-    
-    .row{
-        height: 50px;
-        display: flex;
-        flex-direction: row;
-
-        .col:hover{
-            color:$main-color;
-            cursor: pointer;
-        }
-
-        .ms_nav{
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-            justify-content: center;
-            font-weight: bold;
-            color: white;
-        }
-
-        .ms_logo{
-            display: flex;
-            align-items: center;
-            height: 30px;
-            margin-top:10px
-        }
-
-        .ms_icon{
-            padding-top: 15px;
-            display: flex;
-            flex-direction: row;
-            /* justify-content: space-evenly; */
-            color: white;
-            
-            .icon{
-                margin-right: 13px;
-
-                &:hover{
-                color:$main-color;
-                cursor: pointer;
-                }
-                
-            }
-        }
-    }
         .ms_button{
             display: flex;
             flex-direction: row;
@@ -224,5 +81,4 @@ export default {
         .attivo{
             background-color: $main-color;
         }
-
 </style>
